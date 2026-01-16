@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const productos = [
-    { nombre: "Fade bajo", precio: 180, imagen: "Cortes/fade-bajo.jpg" },
+    { nombre: "Fade bajo", precio: 180, imagen: "Cortes/fade-bajo.png" },
     { nombre: "Fade medio", precio: 180, imagen: "Cortes/fade-medio.jpg" },
     { nombre: "Fade alto", precio: 180, imagen: "Cortes/fade-alto.jpg" },
     { nombre: "Skin Fade", precio: 180, imagen: "Cortes/skin-fade.jpg" },
