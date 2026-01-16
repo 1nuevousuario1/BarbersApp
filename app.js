@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <h2>${p.nombre}</h2>
             <p>Precio: $${precioFinal}</p>
             <label>Cantidad:</label>
-            <select id="cantidad-${index}">
+            <select id="Horarios-${index}">
               ${Array.from({length: 10}, (_, i) => `<option value="${i+1}">${i+1}</option>`).join('')}
             </select>
             <button onclick="agregarAlCarrito('${p.nombre}', ${precioFinal}, ${index})">Agregar</button>
