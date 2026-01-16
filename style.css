@@ -6,12 +6,13 @@ body {
 }
 
 
-/* Bloque “Publícate aquí” */
-.publicate-aqui { background: #fff0f5; border: 2px dashed #d17b88; border-radius: 10px; padding: 20px; margin: 20px auto; max-width: 500px; text-align: center; }
-.publicate-aqui h2 { color: #d17b88; margin-bottom: 10px; }
-.publicate-aqui p { color: #444; margin-bottom: 15px; }
-.btn-publicidad { background: #d17b88; color: #fff; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: bold; }
-.btn-publicidad:hover { background: #b85f70; }
+ <!-- Bloque “Publícate aquí” -->
+  <div class="publicate-aqui">
+    <h2>📢 ¡Publícate aquí!</h2>
+    <p>¿Tienes un negocio local? Muestra tu anuncio en BarberApp y llega a más clientes.</p>
+    <a href="https://wa.me/528111248290?text=Hola,%20quiero%20información%20para%20publicitar%20mi%20negocio%20en%20Snacky%20Almería"
+       class="btn-publicidad">Contáctanos por WhatsApp</a>
+  </div>
 
 /* Título */
 .titulo { text-align: center; font-size: 2em; color: #d17b88; margin: 20px 0; }
