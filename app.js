@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+adocument.addEventListener("DOMContentLoaded", () => {
   const productos = [
     { nombre: "Fade bajo", precio: 180, imagen: "Cortes/fade-bajo.png" },
     { nombre: "Fade medio", precio: 180, imagen: "Cortes/fade-medio.png" },
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    let mensaje = "Hola, quiero hacer un pedido:\n\n";
+    let mensaje = "Hola, quiero hacer cita:\n\n";
     carrito.forEach(item => {
       mensaje += `${item.nombre} x${item.cantidad} = $${item.precio * item.cantidad}\n`;
     });
