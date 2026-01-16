@@ -1,22 +1,19 @@
 document.addEventListener("DOMContentLoaded", () => {
   const productos = [
-    const productos = [
-  const productos = [
-  { nombre: "Fade bajo", precio: 180, imagen: "Cortes/fade-bajo.png" },
-  { nombre: "Fade medio", precio: 180, imagen: "Cortes/fade-medio.png" },
-  { nombre: "Fade alto", precio: 180, imagen: "Cortes/fade-alto.png" },
-  { nombre: "Skin Fade", precio: 180, imagen: "Cortes/skin-fade.png" },
-  { nombre: "Buzz cut", precio: 180, imagen: "Cortes/buzz-cut.png" },
-  { nombre: "Crew Cut", precio: 180, imagen: "Cortes/crew-cut.png" },
-  { nombre: "French Crop", precio: 180, imagen: "Cortes/french-crop.png" },
-  { nombre: "Corte César", precio: 180, imagen: "Cortes/corte-cesar.png" },
-  { nombre: "Pompadour", precio: 180, imagen: "Cortes/pompadour.png" },
-  { nombre: "Quiff", precio: 180, imagen: "Cortes/quiff.png" },
-  { nombre: "Peinado hacia atrás", precio: 180, imagen: "Cortes/peinado-hacia-atras.png" },
-  { nombre: "Peinado al lado", precio: 180, imagen: "Cortes/peinado-al-lado.png" },
-  { nombre: "Undercut", precio: 180, imagen: "Cortes/undercut.png" }
-];
-
+    { nombre: "Fade bajo", precio: 180, imagen: "Cortes/fade-bajo.png" },
+    { nombre: "Fade medio", precio: 180, imagen: "Cortes/fade-medio.png" },
+    { nombre: "Fade alto", precio: 180, imagen: "Cortes/fade-alto.png" },
+    { nombre: "Skin Fade", precio: 180, imagen: "Cortes/skin-fade.png" },
+    { nombre: "Buzz cut", precio: 180, imagen: "Cortes/buzz-cut.png" },
+    { nombre: "Crew Cut", precio: 180, imagen: "Cortes/crew-cut.png" },
+    { nombre: "French Crop", precio: 180, imagen: "Cortes/french-crop.png" },
+    { nombre: "Corte César", precio: 180, imagen: "Cortes/corte-cesar.png" },
+    { nombre: "Pompadour", precio: 180, imagen: "Cortes/pompadour.png" },
+    { nombre: "Quiff", precio: 180, imagen: "Cortes/quiff.png" },
+    { nombre: "Peinado hacia atrás", precio: 180, imagen: "Cortes/peinado-hacia-atras.png" },
+    { nombre: "Peinado al lado", precio: 180, imagen: "Cortes/peinado-al-lado.png" },
+    { nombre: "Undercut", precio: 180, imagen: "Cortes/undercut.png" }
+  ];
 
   let carrito = [];
   let total = 0;
