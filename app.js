@@ -21,32 +21,39 @@ document.addEventListener("DOMContentLoaded", () => {
     return producto.precio;
   }
 
-  function agregarAlCarrito(nombre, precio, index) {
+  // Agregar producto al carrito
+  window.agregarAlCarrito = function(nombre, precio, index) {
     const horario = document.getElementById(`horario-${index}`).value;
     carrito.push({ nombre, precio, horario });
     total += precio;
     renderCarrito();
-  }
+  };
 
-  function eliminarDelCarrito(i) {
+  // Eliminar producto del carrito
+  window.eliminarDelCarrito = function(i) {
     total -= carrito[i].precio;
     carrito.splice(i, 1);
     renderCarrito();
-  }
+  };
 
-  function vaciarCarrito() {
+  // Vaciar carrito
+  window.vaciarCarrito = function() {
     carrito = [];
     total = 0;
     renderCarrito();
-  }
+  };
 
-  function finalizarPedido() {
+  // Finalizar pedido y enviar a WhatsApp
+  window.finalizarPedido = function() {
     if (carrito.length === 0) {
       alert("El carrito está vacío.");
       return;
     }
 
-    let mensaje = "Hola, quiero hacer cita:\n\n";
+    const nombreCliente = document.getElementById("nombreCliente").value;
+    const telefonoCliente = document.getElementById("telefonoCliente").value;
+
+    let mensaje = `Hola, soy ${nombreCliente} (Tel: ${telefonoCliente}), quiero hacer cita:\n\n`;
     carrito.forEach(item => {
       mensaje += `${item.nombre} - Horario: ${item.horario} = $${item.precio}\n`;
     });
@@ -55,8 +62,9 @@ document.addEventListener("DOMContentLoaded", () => {
     let numero = "528111248290";
     let url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
     window.open(url, "_blank");
-  }
+  };
 
+  // Renderizar catálogo
   function renderCatalogo() {
     const catalogoDiv = document.getElementById("catalogo");
     catalogoDiv.innerHTML = "";
@@ -83,14 +91,15 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Renderizar carrito en pantalla
   function renderCarrito() {
-    let lista = `<h2>Total: $${total}</h2><ul>`;
+    let lista = `<h2>Resumen del pedido</h2><ul>`;
     carrito.forEach((item, i) => {
       lista += `<li>${item.nombre} - Horario: ${item.horario} - $${item.precio} 
                   <button onclick="eliminarDelCarrito(${i})">Eliminar</button>
                 </li>`;
     });
-    lista += "</ul>";
+    lista += `</ul><h3>Total: $${total}</h3>`;
     document.getElementById("total").innerHTML = lista;
   }
 
