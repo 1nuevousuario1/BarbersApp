@@ -1,4 +1,4 @@
-adocument.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
   const productos = [
     { nombre: "Fade bajo", precio: 180, imagen: "Cortes/fade-bajo.png" },
     { nombre: "Fade medio", precio: 180, imagen: "Cortes/fade-medio.png" },
@@ -12,6 +12,7 @@ adocument.addEventListener("DOMContentLoaded", () => {
     { nombre: "Quiff", precio: 180, imagen: "Cortes/quiff.png" },
     { nombre: "Peinado hacia atrás", precio: 180, imagen: "Cortes/peinado-hacia-atras.png" },
     { nombre: "Peinado al lado", precio: 180, imagen: "Cortes/peinado-al-lado.png" },
+    { nombre: "Undercut", precio: 180, imagen: "Cortes/undercut.png" }
   ];
 
   let carrito = [];
@@ -22,14 +23,14 @@ adocument.addEventListener("DOMContentLoaded", () => {
   }
 
   function agregarAlCarrito(nombre, precio, index) {
-    const cantidad = parseInt(document.getElementById(`cantidad-${index}`).value);
-    carrito.push({ nombre, precio, cantidad });
-    total += precio * cantidad;
+    const horario = document.getElementById(`horario-${index}`).value;
+    carrito.push({ nombre, precio, horario });
+    total += precio;
     renderCarrito();
   }
 
   function eliminarDelCarrito(i) {
-    total -= carrito[i].precio * carrito[i].cantidad;
+    total -= carrito[i].precio;
     carrito.splice(i, 1);
     renderCarrito();
   }
@@ -48,7 +49,7 @@ adocument.addEventListener("DOMContentLoaded", () => {
 
     let mensaje = "Hola, quiero hacer cita:\n\n";
     carrito.forEach(item => {
-      mensaje += `${item.nombre} x${item.cantidad} = $${item.precio * item.cantidad}\n`;
+      mensaje += `${item.nombre} - Horario: ${item.horario} = $${item.precio}\n`;
     });
     mensaje += `\nTotal: $${total}`;
 
@@ -57,38 +58,36 @@ adocument.addEventListener("DOMContentLoaded", () => {
     window.open(url, "_blank");
   }
 
-function renderCatalogo() {
-  const catalogoDiv = document.getElementById("catalogo");
-  catalogoDiv.innerHTML = "";
+  function renderCatalogo() {
+    const catalogoDiv = document.getElementById("catalogo");
+    catalogoDiv.innerHTML = "";
 
-  // Aquí defines los horarios
-  const horarios = ["08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", 
-                    "15:00", "16:00", "17:00", "18:00", "19:00", "20:00"];
+    const horarios = ["08:00","09:00","10:00","11:00","12:00","13:00",
+                      "14:00","15:00","16:00","17:00","18:00","19:00","20:00"];
 
-  productos.forEach((p, index) => {
-    const precioFinal = aplicarPromociones(p);
-    catalogoDiv.innerHTML += `
-      <div class="producto">
-        <img src="${p.imagen}" alt="${p.nombre}">
-        <div class="info">
-          <h2>${p.nombre}</h2>
-          <p>Precio: $${precioFinal}</p>
-          <label>Horarios:</label>
-          <select id="horario-${index}">
-            ${horarios.map(h => `<option value="${h}">${h}</option>`).join('')}
-          </select>
-          <button onclick="agregarAlCarrito('${p.nombre}', ${precioFinal}, ${index})">Agregar</button>
+    productos.forEach((p, index) => {
+      const precioFinal = aplicarPromociones(p);
+      catalogoDiv.innerHTML += `
+        <div class="producto">
+          <img src="${p.imagen}" alt="${p.nombre}">
+          <div class="info">
+            <h2>${p.nombre}</h2>
+            <p>Precio: $${precioFinal}</p>
+            <label>Horarios:</label>
+            <select id="horario-${index}">
+              ${horarios.map(h => `<option value="${h}">${h}</option>`).join('')}
+            </select>
+            <button onclick="agregarAlCarrito('${p.nombre}', ${precioFinal}, ${index})">Agregar</button>
+          </div>
         </div>
-      </div>
-    `;
-  });
-}
-
+      `;
+    });
+  }
 
   function renderCarrito() {
     let lista = `<h2>Total: $${total}</h2><ul>`;
     carrito.forEach((item, i) => {
-      lista += `<li>${item.nombre} x${item.cantidad} - $${item.precio * item.cantidad} 
+      lista += `<li>${item.nombre} - Horario: ${item.horario} - $${item.precio} 
                   <button onclick="eliminarDelCarrito(${i})">Eliminar</button>
                 </li>`;
     });
