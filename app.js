@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
     { nombre: "Quiff", precio: 180, imagen: "Cortes/quiff.png" },
     { nombre: "Peinado hacia atrás", precio: 180, imagen: "Cortes/peinado-hacia-atras.png" },
     { nombre: "Peinado al lado", precio: 180, imagen: "Cortes/peinado-al-lado.png" },
-    { nombre: "Undercut", precio: 180, imagen: "Cortes/undercut.png" }
   ];
 
   let carrito = [];
