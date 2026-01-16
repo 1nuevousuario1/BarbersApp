@@ -57,27 +57,33 @@ adocument.addEventListener("DOMContentLoaded", () => {
     window.open(url, "_blank");
   }
 
-  function renderCatalogo() {
-    const catalogoDiv = document.getElementById("catalogo");
-    catalogoDiv.innerHTML = "";
-    productos.forEach((p, index) => {
-      const precioFinal = aplicarPromociones(p);
-      catalogoDiv.innerHTML += `
-        <div class="producto">
-          <img src="${p.imagen}" alt="${p.nombre}">
-          <div class="info">
-            <h2>${p.nombre}</h2>
-            <p>Precio: $${precioFinal}</p>
-            <label>Cantidad:</label>
-            <select id="Horarios-${index}">
-              ${Array.from({length: 10}, (_, i) => `<option value="${i+1}">${i+1}</option>`).join('')}
-            </select>
-            <button onclick="agregarAlCarrito('${p.nombre}', ${precioFinal}, ${index})">Agregar</button>
-          </div>
+function renderCatalogo() {
+  const catalogoDiv = document.getElementById("catalogo");
+  catalogoDiv.innerHTML = "";
+
+  // Aquí defines los horarios
+  const horarios = ["08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", 
+                    "15:00", "16:00", "17:00", "18:00", "19:00", "20:00"];
+
+  productos.forEach((p, index) => {
+    const precioFinal = aplicarPromociones(p);
+    catalogoDiv.innerHTML += `
+      <div class="producto">
+        <img src="${p.imagen}" alt="${p.nombre}">
+        <div class="info">
+          <h2>${p.nombre}</h2>
+          <p>Precio: $${precioFinal}</p>
+          <label>Horarios:</label>
+          <select id="horario-${index}">
+            ${horarios.map(h => `<option value="${h}">${h}</option>`).join('')}
+          </select>
+          <button onclick="agregarAlCarrito('${p.nombre}', ${precioFinal}, ${index})">Agregar</button>
         </div>
-      `;
-    });
-  }
+      </div>
+    `;
+  });
+}
+
 
   function renderCarrito() {
     let lista = `<h2>Total: $${total}</h2><ul>`;
