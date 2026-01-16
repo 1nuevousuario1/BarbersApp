@@ -1,18 +1,20 @@
 document.addEventListener("DOMContentLoaded", () => {
   const productos = [
-    { nombre: "Fade bajo", precio: 180, imagen: "tu imagen aqui" },
-    { nombre: "Fade medio", precio: 180, imagen: "tu imagen aqui" },
-    { nombre: "Fade alto", precio: 180, imagen: "tu imagen aqui" },
-    { nombre: "Skin Fade", precio: 180, imagen: "tu imagen aqui" },
-    { nombre: "Buzz cut", precio: 180, imagen: "tu imagen aqui" },
-    { nombre: "Crew Cut", precio: 180, imagen: "tu imagen aqui" },
-    { nombre: "French cut", precio: 180, imagen: "tu imagen aqui" },
-    { nombre: "Caesar Cut", precio: 180, imagen: "tu imagen aqui" },
-    { nombre: "Pompadour", precio: 180, imagen: "tu imagen aqui" },
-    { nombre: "Quiff", precio: 180, imagen: "tu imagen aqui" },
-    { nombre: "Peinado hacia atras", precio: 180, imagen: "tu imagen aqui" },
-    { nombre: "Undercut", precio: 180, imagen: "tu imagen aqui" },
-    { nombre: "Peinado al lado", precio: 180, imagen: "tu imagen aqui" }
+    const productos = [
+  { nombre: "Fade bajo", precio: 180, imagen: "img/fade-bajo.jpg" },
+  { nombre: "Fade medio", precio: 180, imagen: "img/fade-medio.jpg" },
+  { nombre: "Fade alto", precio: 180, imagen: "img/fade-alto.jpg" },
+  { nombre: "Skin Fade", precio: 180, imagen: "img/skin-fade.jpg" },
+  { nombre: "Buzz cut", precio: 180, imagen: "img/buzz-cut.jpg" },
+  { nombre: "Crew Cut", precio: 180, imagen: "img/crew-cut.jpg" },
+  { nombre: "French cut", precio: 180, imagen: "img/french-cut.jpg" },
+  { nombre: "Caesar Cut", precio: 180, imagen: "img/caesar-cut.jpg" },
+  { nombre: "Pompadour", precio: 180, imagen: "img/pompadour.jpg" },
+  { nombre: "Quiff", precio: 180, imagen: "img/quiff.jpg" },
+  { nombre: "Peinado hacia atras", precio: 180, imagen: "img/slick-back.jpg" },
+  { nombre: "Undercut", precio: 180, imagen: "img/undercut.jpg" },
+  { nombre: "Peinado al lado", precio: 180, imagen: "img/comb-over.jpg" }
+
   ];
 
   let carrito = [];
