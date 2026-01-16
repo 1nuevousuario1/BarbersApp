@@ -1,19 +1,20 @@
 document.addEventListener("DOMContentLoaded", () => {
   const productos = [
-    { nombre: "Fade bajo", precio: 180, imagen: "Cortes/fade bajo.png" },
-    { nombre: "Fade medio", precio: 180, imagen: "Cortes/fade medio.png" },
-    { nombre: "Fade alto", precio: 180, imagen: "Cortes/fade alto.png" },
-    { nombre: "Skin Fade", precio: 180, imagen: "Cortes/skin fade.png" },
-    { nombre: "Buzz cut", precio: 180, imagen: "Cortes/Buzz cut.png" },
-    { nombre: "Crew Cut", precio: 180, imagen: "Cortes/crew cut.png" },
-    { nombre: "French cut", precio: 180, imagen: "Cortes/french crop.png" },
-    { nombre: "Caesar Cut", precio: 180, imagen: "Cortes/Corte cesar.png" },
-    { nombre: "Pompadour", precio: 180, imagen: "Cortes/Pompadour.png" },
-    { nombre: "Quiff", precio: 180, imagen: "Cortes/Quiff.png" },
-    { nombre: "Peinado hacia atras", precio: 180, imagen: "Cortes/Peinado hacia atras.png" },
-    { nombre: "Undercut", precio: 180, imagen: "Cortes/undercut.png" },
-    { nombre: "Peinado al lado", precio: 180, imagen: "Cortes/Peinado al lado.png" }
-  ];
+    const productos = [
+  { nombre: "Fade bajo", precio: 180, imagen: "Cortes/fade bajo.png" },
+  { nombre: "Fade medio", precio: 180, imagen: "Cortes/fade medio.png" },
+  { nombre: "Fade alto", precio: 180, imagen: "Cortes/fade alto.png" },
+  { nombre: "Skin Fade", precio: 180, imagen: "Cortes/Skin fade.png" },
+  { nombre: "Buzz cut", precio: 180, imagen: "Cortes/Buzz cut.png" },
+  { nombre: "Crew Cut", precio: 180, imagen: "Cortes/crew cut.png" },
+  { nombre: "French Crop", precio: 180, imagen: "Cortes/french crop.png" },
+  { nombre: "Corte César", precio: 180, imagen: "Cortes/Corte cesar.png" },
+  { nombre: "Pompadour", precio: 180, imagen: "Cortes/Pompadour.png" },
+  { nombre: "Quiff", precio: 180, imagen: "Cortes/Quiff.png" },
+  { nombre: "Peinado hacia atrás", precio: 180, imagen: "Cortes/Peinado hacia atras.png" },
+  { nombre: "Undercut", precio: 180, imagen: "Cortes/undercut.png" },
+  { nombre: "Peinado al lado", precio: 180, imagen: "Cortes/Peinado al lado.png" }
+];
 
   let carrito = [];
   let total = 0;
