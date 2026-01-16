@@ -1,1 +1,88 @@
+<body>
+  <div id="catalogo"></div>
+  <div id="total"></div>
+  <button onclick="vaciarCarrito()">Vaciar carrito</button>
+  <button onclick="finalizarPedido()">Finalizar pedido</button>
+
+  <script>
+    const productos = [/* tu arreglo de cortes */];
+    let carrito = [];
+    let total = 0;
+
+    function aplicarPromociones(producto) {
+      return producto.precio;
+    }
+
+    function agregarAlCarrito(nombre, precio, index) {
+      const cantidad = parseInt(document.getElementById(`cantidad-${index}`).value);
+      carrito.push({ nombre, precio, cantidad });
+      total += precio * cantidad;
+      renderCarrito();
+    }
+
+    function eliminarDelCarrito(i) {
+      total -= carrito[i].precio * carrito[i].cantidad;
+      carrito.splice(i, 1);
+      renderCarrito();
+    }
+
+    function vaciarCarrito() {
+      carrito = [];
+      total = 0;
+      renderCarrito();
+    }
+
+    function finalizarPedido() {
+      if (carrito.length === 0) {
+        alert("El carrito está vacío.");
+        return;
+      }
+
+      let mensaje = "Hola, quiero hacer un pedido:\n\n";
+      carrito.forEach(item => {
+        mensaje += `${item.nombre} x${item.cantidad} = $${item.precio * item.cantidad}\n`;
+      });
+      mensaje += `\nTotal: $${total}`;
+
+      let numero = "528111248290";
+      let url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+      window.open(url, "_blank");
+    }
+
+    function renderCatalogo() {
+      const catalogoDiv = document.getElementById("catalogo");
+      catalogoDiv.innerHTML = "";
+      productos.forEach((p, index) => {
+        const precioFinal = aplicarPromociones(p);
+        catalogoDiv.innerHTML += `
+          <div class="producto">
+            <img src="${p.imagen}" alt="${p.nombre}">
+            <div class="info">
+              <h2>${p.nombre}</h2>
+              <p>Precio: $${precioFinal}</p>
+              <label>Cantidad:</label>
+              <select id="cantidad-${index}">
+                ${Array.from({length: 10}, (_, i) => `<option value="${i+1}">${i+1}</option>`).join('')}
+              </select>
+              <button onclick="agregarAlCarrito('${p.nombre}', ${precioFinal}, ${index})">Agregar</button>
+            </div>
+          </div>
+        `;
+      });
+    }
+
+    function renderCarrito() {
+      let lista = `<h2>Total: $${total}</h2><ul>`;
+      carrito.forEach((item, i) => {
+        lista += `<li>${item.nombre} x${item.cantidad} - $${item.precio * item.cantidad} 
+                    <button onclick="eliminarDelCarrito(${i})">Eliminar</button>
+                  </li>`;
+      });
+      lista += "</ul>";
+      document.getElementById("total").innerHTML = lista;
+    }
+
+    document.addEventListener("DOMContentLoaded", renderCatalogo);
+  </script>
+</body>
 
