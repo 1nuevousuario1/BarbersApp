@@ -61,8 +61,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const catalogoDiv = document.getElementById("catalogo");
     catalogoDiv.innerHTML = "";
 
-    const horarios = ["08:00","09:00","10:00","11:00","12:00","13:00",
-                      "14:00","15:00","16:00","17:00","18:00","19:00","20:00"];
+    const horarios = ["08:00am","09:00am","10:00am","11:00am","12:00pm","1:00pm",
+                      "2:00pm","3:00pm","4:00pm","5:00pm","6:00pm","7:00pm","8:00pm"];
 
     productos.forEach((p, index) => {
       const precioFinal = aplicarPromociones(p);
