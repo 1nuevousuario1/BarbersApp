@@ -1,42 +1,51 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #e0f7fa; /* celeste suave para el fondo general */
-  padding: 20px;
+  background-color: #e0f7fa; /* fondo celeste */
   margin: 0;
+  padding: 20px;
 }
 
-
- <!-- Bloque “Publícate aquí” -->
-  <div class="publicate-aqui">
-    <h2>📢 ¡Publícate aquí!</h2>
-    <p>¿Tienes un negocio local? Muestra tu anuncio en BarberApp y llega a más clientes.</p>
-    <a href="https://wa.me/528111248290?text=Hola,%20quiero%20información%20para%20publicitar%20mi%20negocio%20en%20Snacky%20Almería"
-       class="btn-publicidad">Contáctanos por WhatsApp</a>
-  </div>
-
-/* Título */
-.titulo { text-align: center; font-size: 2em; color: #d17b88; margin: 20px 0; }
-
-/* Producto compacto */
-.producto {
-  background-color: #b3e5fc; /* celeste más brillante */
-  border: 1px solid #81d4fa; /* borde celeste */
+/* Bloque anuncio */
+.publicate-aqui {
+  background-color: #b3e5fc;
+  border: 1px solid #81d4fa;
   border-radius: 8px;
-  padding: 10px;
-  margin: 10px 0;
+  padding: 15px;
+  margin: 20px auto;   /* auto en los lados centra el bloque */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  color: #333;
+  max-width: 600px;    /* ancho máximo para que no se extienda demasiado */
+  text-align: center;  /* centra el contenido dentro del bloque */
+}
+.publicate-aqui h2 {
+  margin-top: 0;
+  color: #0288d1;
+}
+.btn-publicidad {
+  display: inline-block;
+  background-color: #0288d1;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+.btn-publicidad:hover {
+  background-color: #01579b;
 }
 
+/* Título principal */
+.titulo {
+  text-align: center;
+  font-size: 2em;
+  color: #0288d1;
+  margin: 20px 0;
+}
 
-.info h2 { margin: 0; font-size: 1.2em; color: #d17b88; }
-.info p { margin: 5px 0; color: #333; }
-
-select, button { margin-top: 5px; padding: 5px; font-size: 1em; }
-
-/* Total y acciones */
-#total { margin-top: 20px; background: #fff0f5; padding: 15px; border-radius: 8px; border: 1px solid #d17b88; }
-#acciones { margin-top: 10px; text-align: center; }
-#acciones button { background: #d17b88; color: #fff; border: none; padding: 10px 15px; margin: 5px; border-radius: 6px; cursor: pointer; }
-#acciones button:hover { background: #b85f70; }
-
-.subtitulo { text-align: center; font-size: 1.5em; color: #d17b88; margin-bottom: 15px; }
+/* Subtítulo (Citas) */
+.subtitulo {
+  text-align: center;
+  font-size: 1.5em;
+  color: #0288d1;
+  margin: 10px 0 20px;
+}
 
