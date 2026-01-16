@@ -1,9 +1,10 @@
 body {
   font-family: Arial, sans-serif;
-  background: #fff8fc; /* rosa muy claro */
+  background: #e0f7fa; /* celeste */
   padding: 20px;
   margin: 0;
 }
+
 
 /* Bloque “Publícate aquí” */
 .publicate-aqui { background: #fff0f5; border: 2px dashed #d17b88; border-radius: 10px; padding: 20px; margin: 20px auto; max-width: 500px; text-align: center; }
