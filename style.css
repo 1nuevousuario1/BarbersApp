@@ -5,6 +5,14 @@ body {
   padding: 20px;
 }
 
+.producto {
+  background-color: #b3e5fc;
+  border: 1px solid #81d4fa;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
 /* Bloque anuncio */
 .publicate-aqui {
   background-color: #b3e5fc;
